@@ -20,6 +20,7 @@ const PokemonCard = ({ name, image, typeColor }) => {
                 alignItems: "center",
                 paddingLeft: "30px",
                 paddingRight: "20px",
+                marginBottom: "10px",
               }}
             >
               <p>{name}</p>

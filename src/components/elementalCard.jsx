@@ -2,14 +2,11 @@ import React from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 
-const ElementalCard = ({ elementalObj, setSetTypeClicked, setTypeColor }) => {
+const ElementalCard = ({ elementalObj }) => {
   const navigate = useNavigate();
 
   const onclickHandler = () => {
-    console.log(elementalObj.elementName);
-    setSetTypeClicked(elementalObj.elementName);
-    setTypeColor(elementalObj.color);
-    navigate("/pokiInfo");
+    navigate(`/${elementalObj.elementName}`);
   };
 
   return (
@@ -25,7 +22,6 @@ const ElementalCard = ({ elementalObj, setSetTypeClicked, setTypeColor }) => {
             />
           </div>
         </div>
-        {/* <div className="elemental-card-back">backside of the card</div> */}
       </div>
     </div>
   );

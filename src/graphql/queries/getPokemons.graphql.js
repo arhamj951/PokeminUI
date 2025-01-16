@@ -9,11 +9,4 @@ const GET_POKEMONS = gql`
   }
 `;
 
-//   pokemon_v2_pokemon(limit: 100) {
-//     id
-//     name
-//     pokemon_species_id
-
-//   }
-
 export default GET_POKEMONS;

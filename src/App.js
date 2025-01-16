@@ -5,9 +5,6 @@ import InfoPage from "./components/InfoPage";
 import { useState } from "react";
 
 function App() {
-  const [typeClicked, setSetTypeClicked] = useState("");
-  const [typeColor, setTypeColor] = useState("");
-
   return (
     <Router>
       <Routes>
@@ -15,18 +12,18 @@ function App() {
           path="/"
           element={
             <div className="App">
-              <HomePage
-                setSetTypeClicked={setSetTypeClicked}
-                setTypeColor={setTypeColor}
-              ></HomePage>
+              <h1 style={{ textAlign: "center" }}>
+                Choose Pokemon type to View Pokemons
+              </h1>
+              <HomePage></HomePage>
             </div>
           }
         />
         <Route
-          path="/pokiInfo"
+          path={`/:type`}
           element={
             <div className="App">
-              <InfoPage typeClicked={typeClicked} typeColor={typeColor} />
+              <InfoPage />
             </div>
           }
         />

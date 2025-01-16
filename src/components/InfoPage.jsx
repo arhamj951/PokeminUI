@@ -5,9 +5,22 @@ import { useQuery } from "@apollo/client";
 import GET_POKEMONS_BY_ELEMENTAL from "../graphql/queries/getPokemonsByElemental.graphql";
 import LoadingSpinner from "./LoadingSpinner";
 
-const InfoPage = ({ typeClicked, typeColor }) => {
+const cardColors = {
+  water: " #a5cde8",
+  fire: " #e87d63",
+  ground: " #a07544",
+  electric: " #e8c563",
+  grass: " #B9D687",
+  dark: " #779ecb",
+  steel: " #999999",
+  flying: " #cdcdcd",
+  ice: " #AEECF2",
+  psychic: " #7A6AA9",
+  fairy: " #FFA9B9",
+};
+const InfoPage = () => {
   const { loading, error, data } = useQuery(GET_POKEMONS_BY_ELEMENTAL, {
-    variables: { typeName: `${typeClicked}` },
+    variables: { typeName: `${window.location.pathname.replace("/", "")}` },
   });
 
   console.log(data);
@@ -20,7 +33,7 @@ const InfoPage = ({ typeClicked, typeColor }) => {
         data &&
         data.pokemon_v2_pokemon.map((pokemon) => (
           <PokemonCard
-            typeColor={typeColor}
+            typeColor={cardColors[window.location.pathname.replace("/", "")]}
             key={pokemon.id}
             name={pokemon.name}
             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}

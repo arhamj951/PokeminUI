@@ -79,15 +79,11 @@ const elementalCards = [
   },
 ];
 
-const HomePage = ({ setSetTypeClicked, setTypeColor }) => {
+const HomePage = () => {
   return (
     <div className="homepage">
       {elementalCards.map((elementalCard) => (
-        <ElementalCard
-          setTypeColor={setTypeColor}
-          setSetTypeClicked={setSetTypeClicked}
-          elementalObj={elementalCard}
-        />
+        <ElementalCard elementalObj={elementalCard} />
       ))}
     </div>
   );
