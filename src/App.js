@@ -1,8 +1,7 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import InfoPage from "./components/InfoPage";
-import { useState } from "react";
 
 function App() {
   return (
@@ -12,10 +11,8 @@ function App() {
           path="/"
           element={
             <div className="App">
-              <h1 style={{ textAlign: "center" }}>
-                Choose Pokemon type to View Pokemons
-              </h1>
-              <HomePage></HomePage>
+              <h1 style={{ textAlign: "center" }}>Choose Pokemon type to View Pokemons</h1>
+              <HomePage />
             </div>
           }
         />
