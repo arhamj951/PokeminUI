@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
-import InfoPage from "./components/InfoPage";
+import PokemonInfoPage from "./components/PokemonInfoPage";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           path={`/:type`}
           element={
             <div className="App">
-              <InfoPage />
+              <PokemonInfoPage />
             </div>
           }
         />

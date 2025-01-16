@@ -18,7 +18,7 @@ const cardColors = {
   psychic: " #7A6AA9",
   fairy: " #FFA9B9",
 };
-const InfoPage = () => {
+const PokemonInfoPage = () => {
   const { loading, data } = useQuery(GET_POKEMONS_BY_ELEMENTAL, {
     variables: { typeName: `${window.location.pathname.replace("/", "")}` },
   });
@@ -42,4 +42,4 @@ const InfoPage = () => {
   );
 };
 
-export default InfoPage;
+export default PokemonInfoPage;
