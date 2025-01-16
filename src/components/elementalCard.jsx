@@ -2,10 +2,13 @@ import React from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 
-const ElementalCard = ({ elementalObj }) => {
+const ElementalCard = ({ elementalObj, setSetTypeClicked, setTypeColor }) => {
   const navigate = useNavigate();
 
   const onclickHandler = () => {
+    console.log(elementalObj.elementName);
+    setSetTypeClicked(elementalObj.elementName);
+    setTypeColor(elementalObj.color);
     navigate("/pokiInfo");
   };
 
