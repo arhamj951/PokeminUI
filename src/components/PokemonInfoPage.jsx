@@ -18,12 +18,10 @@ const cardColors = {
   psychic: " #7A6AA9",
   fairy: " #FFA9B9",
 };
-const InfoPage = () => {
-  const { loading, error, data } = useQuery(GET_POKEMONS_BY_ELEMENTAL, {
+const PokemonInfoPage = () => {
+  const { loading, data } = useQuery(GET_POKEMONS_BY_ELEMENTAL, {
     variables: { typeName: `${window.location.pathname.replace("/", "")}` },
   });
-
-  console.log(data);
 
   return (
     <div className="homepage">
@@ -34,14 +32,14 @@ const InfoPage = () => {
         data.pokemon_v2_pokemon.map((pokemon) => (
           <PokemonCard
             typeColor={cardColors[window.location.pathname.replace("/", "")]}
-            key={pokemon.id}
+            key={`pokemon-${pokemon.id}`}
             name={pokemon.name}
             image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
-          ></PokemonCard>
+          />
         ))
       )}
     </div>
   );
 };
 
-export default InfoPage;
+export default PokemonInfoPage;
